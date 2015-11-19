@@ -1,0 +1,26 @@
+@(title: String)(content: Html)
+
+<!--Main takes in a string & html code as parameter's (see index to where it's being passed in)-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/main.css")'/>
+        <link rel='shortcut icon' type='image/png' href='@routes.Assets.versioned("images/Pokeball_Icon.png")'/>
+        <script src='@routes.Assets.versioned("javascripts/hello.js")' type='text/javascript'></script>
+    </head>
+    <body>
+        @content
+
+        <button onclick="openPage()">Take me to new page pls</button>
+
+        <script>
+            function openPage() {
+                window.open("/myPage");
+            }
+        </script>
+
+    </body>
+</html>
